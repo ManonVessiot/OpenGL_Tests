@@ -4,6 +4,7 @@
 
 #include "../../easyGL/ShaderManager.h"
 #include "../../easyGL/TextureManager.h"
+#include "../../easyGL/Renderer.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

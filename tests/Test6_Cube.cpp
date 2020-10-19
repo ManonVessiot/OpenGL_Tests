@@ -3,6 +3,7 @@
 #include "../../ImGuiToolKit/vendor/imgui/imgui.h"
 
 #include "../../easyGL/ShaderManager.h"
+#include "../../easyGL/Renderer.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

@@ -2,10 +2,11 @@
 
 #include "Test.h"
 
-#include "../../easyGL/Renderer.h"
 #include "../../easyGL/VertexArray.h"
-#include "../../easyGL/VertexBufferLayout.h"
+#include "../../easyGL/IndexBuffer.h"
+#include "../../easyGL/Shader.h"
 #include "../../easyGL/Texture.h"
+#include "../../easyGL/VertexBuffer.h"
 
 #include <glm/glm.hpp>
 
@@ -23,9 +24,6 @@ namespace tests
             glm::vec3 m_CameraRotation;
             glm::vec3 m_model1Rotation;
             glm::vec3 m_model2Rotation;
-
-
-
 
             glm::mat4 m_Proj;
 

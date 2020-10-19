@@ -6,10 +6,8 @@
 #include "../../OpenglToolKit/GameObjectManager.h"
 #include "../../OpenglToolKit/BatchManager.h"
 #include "../../OpenglToolKit/MaterialManager.h"
-#include "../../OpenglToolKit/WorldManager.h"
 
 #include "../../easyGL/TextureManager.h"
-#include "../../easyGL/Renderer.h"
 
 
 namespace tests {

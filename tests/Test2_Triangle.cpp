@@ -3,6 +3,7 @@
 #include "../../ImGuiToolKit/vendor/imgui/imgui.h"
 
 #include "../../easyGL/ShaderManager.h"
+#include "../../easyGL/Renderer.h"
 
 namespace tests {
 

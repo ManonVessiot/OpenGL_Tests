@@ -4,10 +4,9 @@
 
 #include "../../OpenglToolKit/GameObject.h"
 
-#include "../../easyGL/Renderer.h"
 #include "../../easyGL/VertexArray.h"
-#include "../../easyGL/VertexBufferLayout.h"
-#include "../../easyGL/Texture.h"
+#include "../../easyGL/IndexBuffer.h"
+#include "../../easyGL/VertexBuffer.h"
 
 #include <memory>
 

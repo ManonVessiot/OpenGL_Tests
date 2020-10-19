@@ -1,18 +1,13 @@
 #include "Test13_MeshBuilder.h"
 
-
 #include "../../ImGuiToolKit/vendor/imgui/imgui.h"
 
 #include "../../OpenglToolKit/GameObjectManager.h"
 #include "../../OpenglToolKit/BatchManager.h"
 #include "../../OpenglToolKit/MaterialManager.h"
-#include "../../OpenglToolKit/WorldManager.h"
 #include "../../OpenglToolKit/MeshBuilder.h"
 
 #include "../../easyGL/TextureManager.h"
-#include "../../easyGL/Renderer.h"
-
-
 
 namespace tests {
     Test13_MeshBuilder::Test13_MeshBuilder()
