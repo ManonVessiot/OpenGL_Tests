@@ -19,8 +19,11 @@ OPENGL_TOOLKIT = ../OpenglToolKit/WorldManager.o ../OpenglToolKit/Mesh.o ../Open
 	../OpenglToolKit/GameObject.o ../OpenglToolKit/GameObjectManager.o ../OpenglToolKit/Material.o ../OpenglToolKit/MaterialManager.o \
 	../OpenglToolKit/Batch.o ../OpenglToolKit/BatchManager.o ../OpenglToolKit/MeshBuilder.o
 
-TESTS = ./tests/Test.o ./tests/Test1_GameObject.o ./tests/Test2_Material.o ./tests/Test3_ZBuffer.o \
-	./tests/Test4_BatchManager.o ./tests/Test5_MeshBuilder.o
+TESTS = ./tests/Test.o \
+	./tests/Test1_ClearColor.o ./tests/Test2_Triangle.o ./tests/Test3_SquareAnimatedColor.o ./tests/Test4_Texture2D.o ./tests/Test5_MVP.o \
+	./tests/Test6_Cube.o ./tests/Test7_SimpleBatching.o ./tests/Test8_SimpleDynamicBatching.o \
+	./tests/Test9_GameObject.o ./tests/Test10_Material.o ./tests/Test11_ZBuffer.o \
+	./tests/Test12_BatchManager.o ./tests/Test13_MeshBuilder.o
 
 LOCAL = main.o 
 
@@ -33,4 +36,7 @@ exc: $(LOCAL) $(TESTS) $(OPENGL_TOOLKIT) $(EASY_GL) $(IMGUI_TOOLKIT)
 	$(CXX) -o exc $(LOCAL) $(TESTS) $(OPENGL_TOOLKIT) $(EASY_GL) $(IMGUI_TOOLKIT) $(LIBS)
 
 clean :
-	rm -f *.o exc imgui.ini
+	rm -f *.o exc imgui.ini && \
+	cd ./tests && \
+	rm -f *.o && \
+	cd ..

@@ -13,7 +13,7 @@
 
 namespace tests
 {
-    class Test2_Material : public Test
+    class Test10_Material : public Test
     {
         private:
             OpenglToolKit::GameObject m_GameObject;
@@ -30,8 +30,8 @@ namespace tests
             std::unique_ptr<easyGL::VertexBuffer> m_VB;
 
         public:
-            Test2_Material();
-            ~Test2_Material();
+            Test10_Material();
+            ~Test10_Material();
 
             void OnUpdate(float deltaTime) override;
             void OnRender() override;

@@ -2,11 +2,20 @@
 #include "../ImGuiToolKit/ImGuiManager.h"
 
 #include "tests/Test.h"
-#include "tests/Test1_GameObject.h"
-#include "tests/Test2_Material.h"
-#include "tests/Test4_BatchManager.h"
-#include "tests/Test3_ZBuffer.h"
-#include "tests/Test5_MeshBuilder.h"
+#include "tests/Test1_ClearColor.h"
+#include "tests/Test2_Triangle.h"
+#include "tests/Test3_SquareAnimatedColor.h"
+#include "tests/Test4_Texture2D.h"
+#include "tests/Test5_MVP.h"
+#include "tests/Test6_Cube.h"
+#include "tests/Test7_SimpleBatching.h"
+#include "tests/Test8_SimpleDynamicBatching.h"
+
+#include "tests/Test9_GameObject.h"
+#include "tests/Test10_Material.h"
+#include "tests/Test12_BatchManager.h"
+#include "tests/Test11_ZBuffer.h"
+#include "tests/Test13_MeshBuilder.h"
 
 int main(int argc, char const *argv[])
 {
@@ -32,11 +41,20 @@ int main(int argc, char const *argv[])
         tests::TestMenu* testMenu = new tests::TestMenu(currentTest);
         currentTest = testMenu;
 
-        testMenu->RegisterTest<tests::Test1_GameObject>("Test1_GameObject");
-        testMenu->RegisterTest<tests::Test2_Material>("Test2_Material");
-        testMenu->RegisterTest<tests::Test3_ZBuffer>("Test3_ZBuffer");
-        testMenu->RegisterTest<tests::Test4_BatchManager>("Test4_BatchManager");
-        testMenu->RegisterTest<tests::Test5_MeshBuilder>("Test5_MeshBuilder");
+        testMenu->RegisterTest<tests::Test1_ClearColor>("Test1_ClearColor");
+        testMenu->RegisterTest<tests::Test2_Triangle>("Test2_Triangle");
+        testMenu->RegisterTest<tests::Test3_SquareAnimatedColor>("Test3_SquareAnimatedColor");
+        testMenu->RegisterTest<tests::Test4_Texture2D>("Test4_Texture2D");
+        testMenu->RegisterTest<tests::Test5_MVP>("Test5_MVP");
+        testMenu->RegisterTest<tests::Test6_Cube>("Test6_Cube");
+        testMenu->RegisterTest<tests::Test7_SimpleBatching>("Test7_SimpleBatching");
+        testMenu->RegisterTest<tests::Test8_SimpleDynamicBatching>("Test8_SimpleDynamicBatching");
+        
+        testMenu->RegisterTest<tests::Test9_GameObject>("Test9_GameObject");
+        testMenu->RegisterTest<tests::Test10_Material>("Test10_Material");
+        testMenu->RegisterTest<tests::Test11_ZBuffer>("Test11_ZBuffer");
+        testMenu->RegisterTest<tests::Test12_BatchManager>("Test12_BatchManager");
+        testMenu->RegisterTest<tests::Test13_MeshBuilder>("Test13_MeshBuilder");
 
         // Loop until the user closes the window
         while (!worldManager->CheckCloseFlag())

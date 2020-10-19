@@ -1,4 +1,4 @@
-#include "Test3_ZBuffer.h"
+#include "Test11_ZBuffer.h"
 
 
 #include "../../ImGuiToolKit/vendor/imgui/imgui.h"
@@ -9,7 +9,7 @@
 #include "../../easyGL/Renderer.h"
 
 namespace tests {
-    Test3_ZBuffer::Test3_ZBuffer()
+    Test11_ZBuffer::Test11_ZBuffer()
         :m_Trans1{0.0f, 0.0f, 0.0f},
          m_Rot1{0.0f, 0.0f, 0.0f},
          m_Scale1{1.0f, 1.0f, 1.0f},
@@ -65,11 +65,11 @@ namespace tests {
         m_GameObject2.m_Material->SetMainTexture(easyGL::TextureManager::Instance()->CreateTexture("textures/white.png"));
     }
 
-    Test3_ZBuffer::~Test3_ZBuffer()
+    Test11_ZBuffer::~Test11_ZBuffer()
     {
     }
 
-    void Test3_ZBuffer::OnUpdate(float deltaTime)
+    void Test11_ZBuffer::OnUpdate(float deltaTime)
     {
         m_GameObject1.m_Transform.m_Position = glm::vec3(m_Trans1[0], m_Trans1[1], m_Trans1[2]);
         m_GameObject1.m_Transform.m_Rotation = glm::quat(glm::vec3(glm::radians(m_Rot1[0]), glm::radians(m_Rot1[1]), glm::radians(m_Rot1[2])));
@@ -80,7 +80,7 @@ namespace tests {
         m_GameObject2.m_Transform.m_Scale = glm::vec3(m_Scale2[0], m_Scale2[1], m_Scale2[2]);
     }
 
-    void Test3_ZBuffer::OnRender()
+    void Test11_ZBuffer::OnRender()
     {
         easyGL::Renderer::Clear();
         {            
@@ -129,7 +129,7 @@ namespace tests {
         }
     }
 
-    void Test3_ZBuffer::OnImGuiRender()
+    void Test11_ZBuffer::OnImGuiRender()
     {
         ImGui::DragFloat3("Translation1", m_Trans1, 0.1f);
         ImGui::DragFloat3("Rotation1", m_Rot1, 0.1f);

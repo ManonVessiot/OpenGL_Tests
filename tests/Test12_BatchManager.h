@@ -13,7 +13,7 @@
 
 namespace tests
 {
-    class Test5_MeshBuilder : public Test
+    class Test12_BatchManager : public Test
     {
         private:
             OpenglToolKit::GameObject m_GameObject1;
@@ -36,8 +36,8 @@ namespace tests
             float m_Scale3[3];
 
         public:
-            Test5_MeshBuilder();
-            ~Test5_MeshBuilder();
+            Test12_BatchManager();
+            ~Test12_BatchManager();
 
             void OnUpdate(float deltaTime) override;
             void OnRender() override;

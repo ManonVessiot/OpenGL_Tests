@@ -2,8 +2,6 @@
 
 #include "Test.h"
 
-#include "../../OpenglToolKit/GameObject.h"
-
 #include "../../easyGL/Renderer.h"
 #include "../../easyGL/VertexArray.h"
 #include "../../easyGL/VertexBufferLayout.h"
@@ -13,31 +11,31 @@
 
 namespace tests
 {
-    class Test3_ZBuffer : public Test
+    class Test4_Texture2D : public Test
     {
         private:
-            OpenglToolKit::GameObject m_GameObject1;
-            OpenglToolKit::GameObject m_GameObject2;
-            
-            float m_Trans1[3];
-            float m_Rot1[3];
-            float m_Scale1[3];
-            
-            float m_Trans2[3];
-            float m_Rot2[3];
-            float m_Scale2[3];
-            
+            float m_R;
+            float m_G;
+            float m_B;
+            float m_IncrementR;
+            float m_IncrementG;
+            float m_IncrementB;
+
             std::unique_ptr<easyGL::VertexArray> m_VAO; 
             std::unique_ptr<easyGL::IndexBuffer> m_IndexBuffer;
+            easyGL::Shader* m_Shader;
+            easyGL::Texture* m_Texture;
             std::unique_ptr<easyGL::VertexBuffer> m_VB;
-
+            
         public:
-            Test3_ZBuffer();
-            ~Test3_ZBuffer();
+            Test4_Texture2D();
+            ~Test4_Texture2D();
 
             void OnUpdate(float deltaTime) override;
             void OnRender() override;
             void OnImGuiRender() override;
+
+            void updateColor();
     };
     
 } // namespace tests
