@@ -47,22 +47,22 @@ int main(int argc, char const *argv[])
         tests::TestMenu* testMenu = new tests::TestMenu(currentTest);
         currentTest = testMenu;
 
-        testMenu->RegisterTest<tests::Test1_ClearColor>("Test1_ClearColor");
-        testMenu->RegisterTest<tests::Test2_Triangle>("Test2_Triangle");
-        testMenu->RegisterTest<tests::Test3_SquareAnimatedColor>("Test3_SquareAnimatedColor");
-        testMenu->RegisterTest<tests::Test4_Texture2D>("Test4_Texture2D");
-        testMenu->RegisterTest<tests::Test5_MVP>("Test5_MVP");
-        testMenu->RegisterTest<tests::Test6_Cube>("Test6_Cube");
-        testMenu->RegisterTest<tests::Test7_SimpleBatching>("Test7_SimpleBatching");
-        testMenu->RegisterTest<tests::Test8_SimpleDynamicBatching>("Test8_SimpleDynamicBatching");
+        testMenu->RegisterTest<tests::Test1_ClearColor>(            "01-Test1_ClearColor            ");
+        testMenu->RegisterTest<tests::Test2_Triangle>(              "02-Test2_Triangle              ");
+        testMenu->RegisterTest<tests::Test3_SquareAnimatedColor>(   "03-Test3_SquareAnimatedColor   ");
+        testMenu->RegisterTest<tests::Test4_Texture2D>(             "04-Test4_Texture2D             ");
+        testMenu->RegisterTest<tests::Test5_MVP>(                   "05-Test5_MVP                   ");
+        testMenu->RegisterTest<tests::Test6_Cube>(                  "06-Test6_Cube                  ");
+        testMenu->RegisterTest<tests::Test7_SimpleBatching>(        "07-Test7_SimpleBatching        ");
+        testMenu->RegisterTest<tests::Test8_SimpleDynamicBatching>( "08-Test8_SimpleDynamicBatching ");
         
-        testMenu->RegisterTest<tests::Test9_GameObject>("Test9_GameObject");
-        testMenu->RegisterTest<tests::Test10_Material>("Test10_Material");
-        testMenu->RegisterTest<tests::Test11_ZBuffer>("Test11_ZBuffer");
-        testMenu->RegisterTest<tests::Test12_BatchManager>("Test12_BatchManager");
-        testMenu->RegisterTest<tests::Test13_MeshBuilder>("Test13_MeshBuilder");
+        testMenu->RegisterTest<tests::Test9_GameObject>(            "09-Test9_GameObject            ");
+        testMenu->RegisterTest<tests::Test10_Material>(             "10-Test10_Material             ");
+        testMenu->RegisterTest<tests::Test11_ZBuffer>(              "11-Test11_ZBuffer              ");
+        testMenu->RegisterTest<tests::Test12_BatchManager>(         "12-Test12_BatchManager         ");
+        testMenu->RegisterTest<tests::Test13_MeshBuilder>(          "13-Test13_MeshBuilder          ");
 
-        testMenu->RegisterTest<tests::Test14_Maze>("Test14_Maze");
+        testMenu->RegisterTest<tests::Test14_Maze>(                 "14-Test14_Maze                 ");
 
         float deltatime = 0.05f;
         // Loop until the user closes the window
@@ -70,7 +70,7 @@ int main(int argc, char const *argv[])
         {
             usleep(deltatime * 1000000);
             
-            std::cout << std::endl << "----------Start----------" << std::endl;
+            std::cout << std::endl << "---------- Start ----------" << std::endl;
             worldManager->InitFrame();
             imGuiManager->InitFrame_imgui();
 
@@ -79,7 +79,7 @@ int main(int argc, char const *argv[])
                 currentTest->OnUpdate(deltatime);
                 currentTest->OnRender();
                 imGuiManager->StartWindow("Test");
-                if (currentTest != testMenu && imGuiManager->CreateButton("<-"))
+                if (currentTest != testMenu && imGuiManager->CreateButton("<- Back"))
                 {
                     delete currentTest;
                     currentTest = testMenu;
@@ -91,7 +91,7 @@ int main(int argc, char const *argv[])
             imGuiManager->Render_imgui();
 
             worldManager->EndFrame();
-            std::cout << "-----------End-----------" << std::endl;
+            std::cout << "----------- End -----------" << std::endl;
         }
         delete currentTest;
         if (currentTest != testMenu){
