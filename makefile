@@ -4,9 +4,11 @@
 
 OPENGL_LIBS =  -lglfw -lGLEW -lGL
 
-LIBS = $(OPENGL_LIBS)
+BULLET_LIBS = -lBulletSoftBody -lBulletDynamics -lBulletCollision -lLinearMath
 
-INC = -I /usr/include/
+LIBS = $(OPENGL_LIBS) $(BULLET_LIBS)
+
+INC = -I /usr/include/ -I /usr/local/include/bullet
 
 IMGUI_TOOLKIT = ../ImGuiToolKit/vendor/imgui/imgui.o ../ImGuiToolKit/vendor/imgui/imgui_impl_glfw.o ../ImGuiToolKit/vendor/imgui/imgui_impl_opengl3.o \
 	../ImGuiToolKit/vendor/imgui/imgui_widgets.o ../ImGuiToolKit/vendor/imgui/imgui_draw.o ../ImGuiToolKit/vendor/imgui/imgui_demo.o \

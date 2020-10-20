@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Ubuntu",
+            "includePath": [
+                "/usr/local/include/bullet",
+                "${default}"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "${default}",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}

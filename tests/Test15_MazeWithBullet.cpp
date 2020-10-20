@@ -6,6 +6,8 @@
 #include "../../OpenglToolKit/GameObjectManager.h"
 #include "../../OpenglToolKit/BatchManager.h"
 
+//#include <bullet/btBulletDynamicsCommon.h>
+
 namespace tests {
     Test15_MazeWithBullet::Test15_MazeWithBullet()
         :m_Maze({
@@ -41,6 +43,20 @@ namespace tests {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
         }
         */
+
+
+        /*
+        btDiscreteDynamicsWorld *myWorld;
+        btBroadphaseInterface *myBroadphase;
+        btCollisionDispatcher *myDispatcher;
+        btDefaultCollisionConfiguration *myCollisionConfiguration;
+        btSequentialImpulseConstraintSolver *mySequentialImpulseConstraintSolver;
+        btTransform myTransform;
+        btDefaultMotionState *myMotionState, *myMotionState_Sol;
+        btScalar matrix[16];
+        btRigidBody *body, *body_sol; 
+        //*/
+
         OpenglToolKit::BatchManager::Init(20, 2000, 1000);
     }
 
