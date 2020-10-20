@@ -57,7 +57,9 @@ namespace tests {
                                                                 glm::vec3(m_UpVec[0], m_UpVec[1], m_UpVec[2]));
 
         glm::vec3 position;
-        OpenglToolKit::WorldManager::Instance()->GetCameraTransform(position, m_Gravity);
+        glm::quat rotation;
+        OpenglToolKit::WorldManager::Instance()->GetCameraTransform(position, rotation);
+        m_Gravity = rotation * glm::vec3(0.0f, 0.0f, -1.0f);
         m_Gravity = 9.81f * glm::normalize(m_Gravity);
         std::cout << " m_Gravity : " << m_Gravity.x << ", " << m_Gravity.y << ", " << m_Gravity.z << std::endl;
     }
