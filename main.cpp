@@ -17,6 +17,12 @@
 #include "tests/Test11_ZBuffer.h"
 #include "tests/Test13_MeshBuilder.h"
 
+#include "tests/Test14_Maze.h"
+
+
+#include <iostream>
+#include <unistd.h>
+
 int main(int argc, char const *argv[])
 {
     OpenglToolKit::WorldManager* worldManager = OpenglToolKit::WorldManager::Instance();
@@ -56,16 +62,21 @@ int main(int argc, char const *argv[])
         testMenu->RegisterTest<tests::Test12_BatchManager>("Test12_BatchManager");
         testMenu->RegisterTest<tests::Test13_MeshBuilder>("Test13_MeshBuilder");
 
+        testMenu->RegisterTest<tests::Test14_Maze>("Test14_Maze");
+
+        float deltatime = 0.05f;
         // Loop until the user closes the window
         while (!worldManager->CheckCloseFlag())
         {
+            usleep(deltatime * 1000000);
+            
             std::cout << std::endl << "----------Start----------" << std::endl;
             worldManager->InitFrame();
             imGuiManager->InitFrame_imgui();
 
             if (currentTest)
             {
-                currentTest->OnUpdate(0.0f);
+                currentTest->OnUpdate(deltatime);
                 currentTest->OnRender();
                 imGuiManager->StartWindow("Test");
                 if (currentTest != testMenu && imGuiManager->CreateButton("<-"))
