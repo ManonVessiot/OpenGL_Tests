@@ -1,4 +1,4 @@
-#include "Test14_Maze.h"
+#include "Test15_MazeWithBullet.h"
 
 #include "../../ImGuiToolKit/vendor/imgui/imgui.h"
 
@@ -7,7 +7,7 @@
 #include "../../OpenglToolKit/BatchManager.h"
 
 namespace tests {
-    Test14_Maze::Test14_Maze()
+    Test15_MazeWithBullet::Test15_MazeWithBullet()
         :m_Maze({
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -21,7 +21,6 @@ namespace tests {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         }),
         m_Player(1, 1, 0.25f, 5.0f, 5.0f),
-        m_PlayerTranslation{0.0f, 0.0f, 0.0f},
         m_EyesPos{0.0f, 0.0f, 19.0f},
         m_LookPos{0.0f, 0.0f, 0.0f},
         m_UpVec{0.0f, 1.0f, 0.0f},
@@ -45,11 +44,11 @@ namespace tests {
         OpenglToolKit::BatchManager::Init(20, 2000, 1000);
     }
 
-    Test14_Maze::~Test14_Maze()
+    Test15_MazeWithBullet::~Test15_MazeWithBullet()
     {
     }
 
-    void Test14_Maze::OnUpdate(float deltaTime)
+    void Test15_MazeWithBullet::OnUpdate(float deltaTime)
     {
         m_EyesPos[0] += - 0.1f * m_Moves[0];
         m_EyesPos[1] += - 0.1f * m_Moves[1];
@@ -61,21 +60,15 @@ namespace tests {
         OpenglToolKit::WorldManager::Instance()->GetCameraTransform(position, m_Gravity);
         m_Gravity = 9.81f * glm::normalize(m_Gravity);
         std::cout << " m_Gravity : " << m_Gravity.x << ", " << m_Gravity.y << ", " << m_Gravity.z << std::endl;
-
-        m_PlayerTranslation[0] = glm::dot(m_Gravity, glm::vec3(1.0f, 0.0f, 0.0f)) * deltaTime;
-        m_PlayerTranslation[1] = glm::dot(m_Gravity, glm::vec3(0.0f, 1.0f, 0.0f)) * deltaTime;
-        ////m_PlayerTranslation[2] = glm::dot(m_Gravity, glm::vec3(0.0f, 0.0f, 1.0f)) * deltaTime;
-
-        m_Player.Translate(m_PlayerTranslation[0], m_PlayerTranslation[1], m_PlayerTranslation[2]);
     }
 
-    void Test14_Maze::OnRender()
+    void Test15_MazeWithBullet::OnRender()
     {
         OpenglToolKit::GameObjectManager::Instance()->Render();
         OpenglToolKit::BatchManager::Instance()->EmptyAll();
     }
 
-    void Test14_Maze::OnImGuiRender()
+    void Test15_MazeWithBullet::OnImGuiRender()
     {
         ImGui::DragFloat("z-Pose of eyes", &m_EyesPos[2], 0.1f);
 

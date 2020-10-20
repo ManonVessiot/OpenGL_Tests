@@ -18,6 +18,8 @@
 #include "tests/Test13_MeshBuilder.h"
 
 #include "tests/Test14_Maze.h"
+#include "tests/Test15_MazeWithBullet.h"
+
 
 
 #include <iostream>
@@ -47,22 +49,23 @@ int main(int argc, char const *argv[])
         tests::TestMenu* testMenu = new tests::TestMenu(currentTest);
         currentTest = testMenu;
 
-        testMenu->RegisterTest<tests::Test1_ClearColor>(            "01-Test1_ClearColor            ");
-        testMenu->RegisterTest<tests::Test2_Triangle>(              "02-Test2_Triangle              ");
-        testMenu->RegisterTest<tests::Test3_SquareAnimatedColor>(   "03-Test3_SquareAnimatedColor   ");
-        testMenu->RegisterTest<tests::Test4_Texture2D>(             "04-Test4_Texture2D             ");
-        testMenu->RegisterTest<tests::Test5_MVP>(                   "05-Test5_MVP                   ");
-        testMenu->RegisterTest<tests::Test6_Cube>(                  "06-Test6_Cube                  ");
-        testMenu->RegisterTest<tests::Test7_SimpleBatching>(        "07-Test7_SimpleBatching        ");
-        testMenu->RegisterTest<tests::Test8_SimpleDynamicBatching>( "08-Test8_SimpleDynamicBatching ");
+        testMenu->RegisterTest<tests::Test1_ClearColor>(           "01-Test1_ClearColor           ");
+        testMenu->RegisterTest<tests::Test2_Triangle>(             "02-Test2_Triangle             ");
+        testMenu->RegisterTest<tests::Test3_SquareAnimatedColor>(  "03-Test3_SquareAnimatedColor  ");
+        testMenu->RegisterTest<tests::Test4_Texture2D>(            "04-Test4_Texture2D            ");
+        testMenu->RegisterTest<tests::Test5_MVP>(                  "05-Test5_MVP                  ");
+        testMenu->RegisterTest<tests::Test6_Cube>(                 "06-Test6_Cube                 ");
+        testMenu->RegisterTest<tests::Test7_SimpleBatching>(       "07-Test7_SimpleBatching       ");
+        testMenu->RegisterTest<tests::Test8_SimpleDynamicBatching>("08-Test8_SimpleDynamicBatching");
         
-        testMenu->RegisterTest<tests::Test9_GameObject>(            "09-Test9_GameObject            ");
-        testMenu->RegisterTest<tests::Test10_Material>(             "10-Test10_Material             ");
-        testMenu->RegisterTest<tests::Test11_ZBuffer>(              "11-Test11_ZBuffer              ");
-        testMenu->RegisterTest<tests::Test12_BatchManager>(         "12-Test12_BatchManager         ");
-        testMenu->RegisterTest<tests::Test13_MeshBuilder>(          "13-Test13_MeshBuilder          ");
+        testMenu->RegisterTest<tests::Test9_GameObject>(           "09-Test9_GameObject           ");
+        testMenu->RegisterTest<tests::Test10_Material>(            "10-Test10_Material            ");
+        testMenu->RegisterTest<tests::Test11_ZBuffer>(             "11-Test11_ZBuffer             ");
+        testMenu->RegisterTest<tests::Test12_BatchManager>(        "12-Test12_BatchManager        ");
+        testMenu->RegisterTest<tests::Test13_MeshBuilder>(         "13-Test13_MeshBuilder         ");
 
-        testMenu->RegisterTest<tests::Test14_Maze>(                 "14-Test14_Maze                 ");
+        testMenu->RegisterTest<tests::Test14_Maze>(                "14-Test14_Maze                ");
+        testMenu->RegisterTest<tests::Test15_MazeWithBullet>(      "15-Test15_MazeWithBullet      ");
 
         float deltatime = 0.05f;
         // Loop until the user closes the window
