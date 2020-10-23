@@ -9,6 +9,7 @@
 #include "../../Maze/Maze.h"
 #include "../../Maze/Player.h"
 
+#include <btBulletDynamicsCommon.h>
 
 namespace tests
 {
@@ -25,6 +26,29 @@ namespace tests
             int m_Moves[2];
 
             glm::vec3 m_Gravity;
+
+            // Physic World
+            btDiscreteDynamicsWorld *myWorld;
+            btBroadphaseInterface *myBroadphase;
+            btCollisionDispatcher *myDispatcher;
+            btDefaultCollisionConfiguration *myCollisionConfiguration;
+            btSequentialImpulseConstraintSolver *mySequentialImpulseConstraintSolver;
+            btTransform myTransform;
+            btDefaultMotionState *myMotionState, *myMotionState_Sol;
+            btScalar matrix[16];
+            btRigidBody *body, *body_sol;
+
+            btCollisionShape* shape;
+            btVector3 localInertia;
+            btScalar mass;
+
+            btRigidBody::btRigidBodyConstructionInfo* myBoxRigidBodyConstructionInfo;
+
+            btCollisionShape* shape_sol;
+            btVector3 localInertiaSol;
+            btScalar massSol;
+
+            btRigidBody::btRigidBodyConstructionInfo* sol_info;
 
         public:
             Test15_MazeWithBullet();

@@ -3,7 +3,7 @@
         {
             "name": "Ubuntu",
             "includePath": [
-                "/usr/local/include/bullet",
+                "/usr/local/include/bullet/",
                 "${default}"
             ],
             "intelliSenseMode": "gcc-x64",
